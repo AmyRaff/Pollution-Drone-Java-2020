@@ -55,7 +55,7 @@ public class App
     public static void createJSONFile(FeatureCollection fc) {
     	try {
     		// create the JSON file and write to it
-    		FileWriter file = new FileWriter("src/main/java/uk/ac/ed/inf/heatmap/output.json");
+    		FileWriter file = new FileWriter("output.geojson");
     		file.write(fc.toJson());
 	        file.close();
 		} catch (IOException e) {
@@ -72,7 +72,7 @@ public class App
 		String[][] pollution = new String[partitions][partitions];
     	try {
     		// reading predictions.txt
-			FileReader file = new FileReader("src/main/java/uk/ac/ed/inf/heatmap/predictions.txt");
+			FileReader file = new FileReader("predictions.txt");
 			BufferedReader buffered = new BufferedReader(file);
 			try {
 				while ((line = buffered.readLine()) != null) {
