@@ -4,6 +4,7 @@ public class Sensor {
 
 	private Coordinate coordinates;
 	private String words;
+	private boolean visited = false;
 	
 	public static class Coordinate {
 		private double lng;
@@ -24,14 +25,22 @@ public class Sensor {
 	
 	// get colour of marker for the sensor
 	public String getColour() {
-		var rgb = MapCreator.getSensorColour(this);
+		var rgb = MapUtils.getSensorColour(this);
 		return rgb;
 	}
 	
 	// get symbol of marker for the sensor
 	public String getSymbol() {
-		var symbol = MapCreator.getMarkerSymbol(this);
+		var symbol = MapUtils.getMarkerSymbol(this);
 		return symbol;
+	}
+	
+	public void setVisited() {
+		visited = true;
+	}
+	
+	public boolean isVisited() {
+		return visited;
 	}
 	
 }
